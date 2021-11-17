@@ -1,0 +1,20 @@
+micha@MSN-ThinkPad-E15 MINGW64 ~/source/repos/PokeApi (main)
+$ vue create pokemonitor
+
+Vue CLI v4.5.15
+? Please pick a preset:
+  Default ([Vue 2] babel, eslint)
+> Default (Vue 3) ([Vue 3] babel, eslint) 
+  Manually select features
+
+micha@MSN-ThinkPad-E15 MINGW64 ~/source/repos/PokeApi (main)
+$ cd pokemonitor
+
+micha@MSN-ThinkPad-E15 MINGW64 ~/source/repos/PokeApi/pokemonitor (main)
+$ npm run serve
+
+micha@MSN-ThinkPad-E15 MINGW64 ~/source/repos/PokeApi/pokemonitor (main)
+$ npm install -D tailwindcss@latest postcss@latest
+
+micha@MSN-ThinkPad-E15 MINGW64 ~/source/repos/PokeApi/pokemonitor (main)
+$ npx tailwindcss init -p

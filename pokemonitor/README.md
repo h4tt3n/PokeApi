@@ -1,4 +1,4 @@
-# poke-api
+# pokemonitor
 
 ## Project setup
 ```
