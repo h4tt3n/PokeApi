@@ -1,0 +1,2 @@
+Gitignore.IO brugt til at generere .gitignore fil
+https://docs.gitignore.io/
