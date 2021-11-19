@@ -1,18 +1,47 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    Home
+    <p ref="p">My name is {{ name }} and my age is {{ age }}</p>
+    <button @click="handleClick">click me</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import  { ref } from 'vue' // this.$ref is not available in setup(), so we import it
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  setup() { // runs before any lifecycle hooks
+    console.log('setup')
+
+    const p = ref(null)  // this.$ref is not available in setup(), so we import it
+    console.log(p, p.value)
+
+    let name = 'mario' // non-reactive values
+    let age = 30
+
+    const handleClick = () => {
+      console.log(p, p.value)
+      p.value.classList.add('test')
+      p.value.textContent = 'hello, ninjas'
+    }
+
+    return {
+      //name: name, age: age
+      name, age, handleClick, p
+    }
+  },
+  data() {
+    return {
+      name: 'mario', // reactive values
+      age: 30
+    }
+  },
+  created() {
+    console.log('created')
+  },
+  mounted() {
+    console.log('mounted')
   }
 }
 </script>
