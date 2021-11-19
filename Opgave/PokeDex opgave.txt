@@ -1,0 +1,40 @@
+Opgave:
+
+Lav et site, der henter data fra PokeApi: https://pokeapi.co/
+og viser indholdet på en flot måde.
+
+1 - vælg et JS framework/library
+2 - lav et mockup af en side 
+3 - Der skal være et grid/flex view på forsiden
+4 - der skal være 2 lag af nesting 
+5 - der skal bruges routing
+
+Husk:
+
+ - Tilføj et reference dokument med links til alle ressourcer, websites, 
+   kode osv. hentet fra nettet.
+ - Tilføj Readme fil, der forklarer hvad man skal installere (Vue, 
+   Tailwind etc) for at kunne køre det på sin maskine.
+
+
+Løsning:
+
+1 - Vue + Tailwind
+
+------------------------------------------------------------------------
+Backlog:
+------------------------------------------------------------------------
+ - Installer Tailwind.
+ - Check andre sites, der bruger PokeApi og stjæl ideer.
+ - Læs op på PokeApi
+ - Læs op på Vue
+ - Læs op på Tailwind
+
+------------------------------------------------------------------------
+In Progress:
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+Done:
+------------------------------------------------------------------------
+ - Opret Vue projekt. Ok.

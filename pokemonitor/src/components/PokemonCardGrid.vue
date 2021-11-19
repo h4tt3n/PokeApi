@@ -16,7 +16,7 @@ export default {
         const pokemonList = ref([]);
 
         const load = async () => {
-            let data = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100&offset=0');
+            let data = await fetch('https://pokeapi.co/api/v2/pokemon?limit=12&offset=0');
             let jsonResult = await data.json();
             pokemonList.value = jsonResult.results;
         }

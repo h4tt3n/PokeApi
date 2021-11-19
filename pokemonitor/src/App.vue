@@ -1,17 +1,17 @@
 <template>
   <div>Welcome to PokeMonitor!</div>
-  <Navbar />
+  <NavbarIndex />
   <PokemonCardGrid />
 </template>
 
 <script>
-import Navbar from './components/Navbar'
+import NavbarIndex from './components/NavbarIndex'
 import PokemonCardGrid from './components/PokemonCardGrid'
 
 export default {
   name: 'App',
   components: {
-    Navbar,
+    NavbarIndex,
     PokemonCardGrid
   }
 }

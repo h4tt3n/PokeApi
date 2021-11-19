@@ -1,18 +1,18 @@
 <template>
-    <div>
-        <nav>Nav bar</nav>
-    </div>
+    <NavbarDetails />
 </template>
 
 <script>
 import { ref } from 'vue';
+import NavbarDetails from './NavbarDetails'
 
 export default {
     setup() {
-        const navBar = ref([]);
+        const pokemonDetails = ref([]);
         
         return {
-            navBar
+            NavbarDetails,
+            pokemonDetails
         }
     }
 }
