@@ -1,18 +1,25 @@
 <template>
-  <NavbarCardGrid />
-  <router-view/>
+  <div id="nav">
+    Navbar
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </div>
 </template>
 
 <script>
-import { NavbarCardGrid } from './views/NavbarCardGrid.vue'
+import { ref } from 'vue';
 
-export default {
-  components: { 
-    NavbarCardGrid 
+  export default {
+    name: 'NavbarCardGrid',
+    setup() {
+      const navBarCardGrid = ref([]);
+
+    return {
+      navBarCardGrid
     }
+  }
 }
 </script>
-
 
 <style>
 #app {
