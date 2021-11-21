@@ -4,7 +4,7 @@
 
   <div v-if="pokemonRef">
       <h1>#{{ pokemonRef.id }} {{ pokemonRef.name }}</h1>
-      <img :src="pokemonRef.sprites.other['official-artwork'].front_default" alt="">
+      <img :src="pokemonRef.sprites.other['official-artwork'].front_default">
 
       <h2>Base properties:</h2>
         Height: {{ pokemonRef.height }}
@@ -12,17 +12,40 @@
         Order: {{ pokemonRef.order }}
         Weight: {{ pokemonRef.weight }}
 
-      <div v-if="pokemonRef.id">
+        <h2>Abilities:</h2>
+        <li v-for="ability in pokemonRef.abilities" :key="ability.id">
+          <ul>{{ability.ability.name}}</ul>
+        </li>
 
-        <Properties :name="'Abilities'" :url="'ability'" :id="pokemonRef.id" />
-        <Properties :name="'Growth Rates'" :url="'growth-rate'" :id="pokemonRef.id" />
+        <h2>Forms:</h2>
+        <li v-for="form in pokemonRef.forms" :key="form.id">
+          <ul>{{form.name}}</ul>
+        </li>
 
-        <!-- <Abilities :id="pokemonRef.id" /> -->
+        <h2>Game indices:</h2>
+        <li v-for="gameIndex in pokemonRef.game_indices" :key="gameIndex.id">
+          <ul>Index: {{gameIndex.game_index}} Name: {{gameIndex.version.name}}</ul>
+        </li>
 
-        <!-- <Species :id="pokemonRef.id" /> -->
+        <h2>Held Items:</h2>
+        <li v-for="item in pokemonRef.held_items" :key="item.id">
+          <ul>{{item}}</ul>
+        </li>
 
-        <!-- <GrowthRates :id="pokemonRef.id" /> -->
-      </div>
+        <h2>Species:</h2>
+        <li v-for="species in pokemonRef.species" :key="species.id">
+          <ul>{{species}}</ul>
+        </li>
+
+        <!-- <Species :id="pokemonIdRef" /> -->
+
+
+
+      <!-- <div v-if="pokemonIdRef">
+        <Abilities :id="pokemonIdRef" />
+        <Species :id="pokemonIdRef" />
+        <GrowthRates :id="pokemonIdRef" />
+      </div> -->
 
   </div>
   <div v-else>
@@ -52,12 +75,13 @@ export default {
           let data = await fetch('https://pokeapi.co/api/v2/pokemon/' + props.name);
           let jsonResult = await data.json();
           pokemonRef.value = jsonResult;
+          pokemonIdRef.value = pokemonRef.value.id;
       }
 
       loadPokemon();
 
       return {
-        pokemonRef
+        pokemonRef, pokemonIdRef
       };
   }
 }
