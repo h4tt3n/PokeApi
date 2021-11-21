@@ -1,6 +1,5 @@
 <template>
   <Headline />
-  <NavBar />
   <router-view />
 </template>
 

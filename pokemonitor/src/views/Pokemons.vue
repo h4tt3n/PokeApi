@@ -1,4 +1,5 @@
 <template>
+    <NavBar />
   <div class="pokemons">
     <PokeCardGrid />
   </div>
@@ -7,13 +8,14 @@
 <script>
 // @ is an alias to /src
 import PokeCardGrid from '@/components/PokeCardGrid.vue'
+import NavBar from '../components/NavBar.vue'
 
 export default {
   setup() {
     
   },
   components: {
-    PokeCardGrid
+    PokeCardGrid, NavBar
   }
 }
 </script>

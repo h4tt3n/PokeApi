@@ -22,7 +22,7 @@ const routes = [
     component: Pokemons
   },
   {
-    path: '/pokemons/:id',
+    path: '/pokemons/:name',
     name: 'PokemonDetails',
     component: PokemonDetails,
     props: true
