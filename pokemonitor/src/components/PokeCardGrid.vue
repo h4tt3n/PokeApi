@@ -1,6 +1,6 @@
 <template>
 
-    <div class="flex flex-row flex-nowrap my-2 h-10 w-full justify-center">
+    <div class="flex flex-row flex-nowrap mb-8 h-10 w-full justify-center">
       <input v-model="searchRef" class="rounded-full border-2 px-3 w-6/12 text-2xl" type="text" placeholder="Search...">
     </div>
 

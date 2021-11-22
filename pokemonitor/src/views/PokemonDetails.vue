@@ -1,7 +1,7 @@
 <template>
   <NavBar />
 
-  <div v-if="pokemonRef">
+  <div v-if="pokemonRef" class="bg-gray-50">
       <div class="text-2xl">{{ pokemonRef.name }}</div>
       <div class="flex flex-row flex-nowrap my-2 w-full justify-center"><img :src="pokemonRef.sprites.other['official-artwork'].front_default"></div>
       <div class="flex flex-row flex-nowrap my-2 h-10 w-full justify-center">
