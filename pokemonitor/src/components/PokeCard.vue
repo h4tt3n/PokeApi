@@ -1,5 +1,5 @@
 <template>
-    <div v-if="pokemonRef" class="">
+    <div v-if="pokemonRef" class="text-xl">
         <span class="text-center">{{ pokemonRef.name }}</span>
         <img :src="pokemonRef.sprites.other['official-artwork'].front_default" alt="">
     </div>

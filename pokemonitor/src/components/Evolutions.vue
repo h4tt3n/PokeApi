@@ -3,9 +3,9 @@
 // Get evolution-chain
 
 <template>
-    <h2>Evolutions:</h2>
+    <h2>Next Evolution:</h2>
     <div v-for="evolution in pokemonEvolutionChain" :key="evolution.id">
-        {{evolution.species}}
+        {{evolution.species.name}}
     </div>
 
 </template>
@@ -14,7 +14,7 @@
 import { ref, watch } from 'vue';
 
 export default {
-  props: ['id'],
+  props: ['name'],
 
   setup(props) {
     
@@ -26,8 +26,8 @@ export default {
     const pokemonEvolutionChainURl = ref('');
     const pokemonEvolutionChain = ref('');
 
-      const loadPokemon = async (id) => {
-          let data = await fetch('https://pokeapi.co/api/v2/pokemon/' + id);
+      const loadPokemon = async (name) => {
+          let data = await fetch('https://pokeapi.co/api/v2/pokemon/' + name);
           let jsonResult = await data.json();
           pokemonRef.value = jsonResult;
           pokemonSpeciesName.value = pokemonRef.value.species.name;
@@ -47,10 +47,9 @@ export default {
           pokemonEvolutionChain.value = evolutionChainRef.value.chain.evolves_to;
       }
 
-      loadPokemon(props.id);
-
-    watch(pokemonSpeciesName, loadSpecies);
-    watch(pokemonEvolutionChainURl, loadEvolutionChain);
+        loadPokemon(props.name);
+        watch(pokemonSpeciesName, loadSpecies);
+        watch(pokemonEvolutionChainURl, loadEvolutionChain);
 
       return {
         evolutionChainRef, pokemonEvolutionChain
