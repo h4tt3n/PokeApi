@@ -3,16 +3,19 @@
   <NavBarDetails />
 
   <div v-if="pokemonRef">
-      <h1>#{{ pokemonRef.id }} {{ pokemonRef.name }}</h1>
+      <h1>{{ pokemonRef.name }}</h1>
       <img :src="pokemonRef.sprites.other['official-artwork'].front_default">
 
       <h2>Base properties:</h2>
+        Id: {{ pokemonRef.id }}
         Height: {{ pokemonRef.height }}
         Base Experience: {{ pokemonRef.base_experience }}
         Order: {{ pokemonRef.order }}
         Weight: {{ pokemonRef.weight }}
 
-        <h2>Abilities:</h2>
+        <Evolutions :id="pokemonRef.id" />
+
+        <!-- <h2>Abilities:</h2>
         <li v-for="ability in pokemonRef.abilities" :key="ability.id">
           <ul>{{ability.ability.name}}</ul>
         </li>
@@ -35,7 +38,7 @@
         <h2>Species:</h2>
         <li v-for="species in pokemonRef.species" :key="species.id">
           <ul>{{species}}</ul>
-        </li>
+        </li> -->
 
         <!-- <Species :id="pokemonIdRef" /> -->
 
@@ -54,17 +57,17 @@
 </template>
 
 <script>
-import { ref } from '@vue/reactivity';
+import { ref } from 'vue';
 import NavBarDetails from '../components/NavBarDetails.vue'
 import Abilities from '../components/Abilities.vue'
 import Species from '../components/Species.vue'
 import GrowthRates from '../components/GrowthRates.vue'
-import Properties from '../components/FetchProperty.vue'
+import Evolutions from '../components/Evolutions.vue'
 
 export default {
   props: ['name'],
   components: {
-    NavBarDetails, Abilities, Species, GrowthRates, Properties
+    NavBarDetails, Abilities, Species, GrowthRates, Evolutions
   },
   setup(props) {
     

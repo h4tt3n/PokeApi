@@ -2,7 +2,6 @@
 
     <div class="flex flex-row flex-nowrap my-2 h-10 w-full justify-center">
       <input v-model="searchRef" class="rounded-full border-2 px-3 w-6/12 text-2xl" type="text" placeholder="Search...">
-      <!-- <button class="rounded-r-full px-4 text-2xl bg-blue-400 hover:bg-blue-800 text-center text-black hover:text-white">Search</button> -->
     </div>
 
     <div class="grid grid-cols-6 gap-4">
@@ -15,8 +14,7 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-import { computed } from '@vue/reactivity';
+import { ref, computed } from 'vue';
 import PokeCard from './PokeCard.vue'
 
 export default {

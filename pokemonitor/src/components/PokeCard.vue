@@ -1,13 +1,12 @@
 <template>
     <div v-if="pokemonRef" class="">
-        <h1>#{{ pokemonRef.id }}</h1>
-        <img :src="pokemonRef.sprites.other['official-artwork'].front_default" alt="">
         <span class="text-center">{{ pokemonRef.name }}</span>
+        <img :src="pokemonRef.sprites.other['official-artwork'].front_default" alt="">
     </div>
 </template>
 
 <script>
-import { ref } from '@vue/reactivity';
+import { ref } from 'vue';
 
 export default {
 
