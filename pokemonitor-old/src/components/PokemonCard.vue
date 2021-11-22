@@ -1,9 +1,5 @@
 <template>
-    <div v-if="pokemonRef" @click="logPokemon(pokemonRef)" class="w-72 h-92 m-2 bg-blue-100">
-        <h1>#{{ pokemonRef.id }}</h1>
-        <img :src="pokemonRef.sprites.other['official-artwork'].front_default" alt="">
-        <span class="text-center">{{ pokemonRef.name }}</span>
-    </div>
+
 </template>
 
 <script>

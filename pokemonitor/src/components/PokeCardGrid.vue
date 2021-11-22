@@ -4,7 +4,7 @@
       <input v-model="searchRef" class="rounded-full border-2 px-3 w-6/12 text-2xl" type="text" placeholder="Search...">
     </div>
 
-    <div class="grid grid-cols-6 gap-4">
+    <div class="grid grid-cols-8 gap-4">
         <div v-for="pokemon in matchingPokemons" :key="pokemon.name">
             <router-link :to="{ name: 'PokemonDetails', params: { name: pokemon.name }}">
                 <PokeCard :pokemon="pokemon" />

@@ -1,47 +1,32 @@
 <template>
   <div class="home">
-    Home
-    <p ref="p">My name is {{ name }} and my age is {{ age }}</p>
-    <button @click="handleClick">click me</button>
+    <h1>Home</h1>
+    <input type="text" v-model="searchWord">
+
+    <div v-for="name in filteredNames" :key="name">
+      {{ name }}
+    </div>
+
   </div>
 </template>
 
 <script>
-import  { ref } from 'vue' // this.$ref is not available in setup(), so we import it
+import  { ref, computed } from 'vue' // this.$ref is not available in setup(), so we import it
 
 export default {
-  name: 'Home',
   setup() { // runs before any lifecycle hooks
-    console.log('setup')
 
-    const p = ref(null)  // this.$ref is not available in setup(), so we import it
-    console.log(p, p.value)
+    const searchWord = ref('')
 
-    let name = 'mario' // non-reactive values
-    let age = 30
+    const names = ref(['Ash', 'Ripley', 'Parker', 'Brett', 'Dallas', 'Kane', 'Lambert', 'Jonesey'])
 
-    const handleClick = () => {
-      console.log(p, p.value)
-      p.value.classList.add('test')
-      p.value.textContent = 'hello, ninjas'
-    }
+    const filteredNames = computed(() => {
+      return names.value.filter((name) => name.toLowerCase().includes(searchWord.value.toLowerCase()))
+    })
 
     return {
-      //name: name, age: age
-      name, age, handleClick, p
+      searchWord, filteredNames, names
     }
-  },
-  data() {
-    return {
-      name: 'mario', // reactive values
-      age: 30
-    }
-  },
-  created() {
-    console.log('created')
-  },
-  mounted() {
-    console.log('mounted')
   }
 }
 </script>

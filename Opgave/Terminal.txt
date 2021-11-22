@@ -13,8 +13,13 @@ $ cd pokemonitor
 micha@MSN-ThinkPad-E15 MINGW64 ~/source/repos/PokeApi/pokemonitor (main)
 $ npm run serve
 
+TailWind:
+
 micha@MSN-ThinkPad-E15 MINGW64 ~/source/repos/PokeApi/pokemonitor (main)
-$ npm install -D tailwindcss@latest postcss@latest
+$ npm install tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
+
+micha@MSN-ThinkPad-E15 MINGW64 ~/source/repos/PokeApi/pokemonitor (main)
+$ npm audit fix --force
 
 micha@MSN-ThinkPad-E15 MINGW64 ~/source/repos/PokeApi/pokemonitor (main)
 $ npx tailwindcss init -p

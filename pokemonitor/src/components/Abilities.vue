@@ -2,7 +2,7 @@
 
   <div v-if="pokemonAbilitiesRef">
       <h2>Abilities:</h2>
-      <div v-for="ability in pokemonAbilitiesRef" :key="ability.id">
+      <div v-for="ability in pokemonAbilitiesRef" :key="ability">
         {{ ability }}
       </div>
   </div>
