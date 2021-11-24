@@ -10,51 +10,35 @@
 
   </div>
 
-  <input type="text" v-model="searchWord">
+  <!-- <input type="text" v-model="searchWord">
   <div v-for="name in filteredNames" :key="name">
     {{ name }}
 
-  </div>
+  </div> -->
 </template>
 
 <script>
-import  { ref, computed } from 'vue' // this.$ref is not available in setup(), so we import it
+import  { computed } from 'vue' // this.$ref is not available in setup(), so we import it
 import PostList from '../components/PostList.vue'
+import getPosts from '../composables/getPosts.js'
 
 export default {
   components: { PostList },
   setup() { // The composition API. Runs before any lifecycle hooks
-  
-    const posts = ref([])
-    const error = ref(null)
 
-    const load = async () => {
-      try {
-        let data = await fetch('http://localhost:3000/posts')
-        if(!data.ok) {
-          throw Error('No data available')
-        }
-        posts.value = await data.json()
-      }
-      catch (err) {
-        error.value = err.message
-        console.log(error.value)
-      }
-    }
-
+    const { posts, error, load } = getPosts()
+ 
     load()
 
-    const showPosts = ref(true)
-
     //
-    const searchWord = ref('')
-    const names = ref(['Ash', 'Ripley', 'Parker', 'Brett', 'Dallas', 'Kane', 'Lambert', 'Jonesey'])
-    const filteredNames = computed(() => {
-      return names.value.filter((name) => name.toLowerCase().includes(searchWord.value.toLowerCase()))
-    })
+    // const searchWord = ref('')
+    // const names = ref(['Ash', 'Ripley', 'Parker', 'Brett', 'Dallas', 'Kane', 'Lambert', 'Jonesey'])
+    // const filteredNames = computed(() => {
+    //   return names.value.filter((name) => name.toLowerCase().includes(searchWord.value.toLowerCase()))
+    // })
 
     return {
-      searchWord, filteredNames, names, posts, showPosts, error
+      posts, error //, searchWord, filteredNames, names
     }
   }
 }
